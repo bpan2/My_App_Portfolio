@@ -3,8 +3,6 @@ package com.me.myappportfolio;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,8 +18,6 @@ public class MainActivity extends ActionBarActivity {
     Button capstone_btn = null;
 
     static int id,  idbk;
-    static boolean state = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void onClick(View v) {
 
-            if(idbk != 0) {
+            if(idbk != 0) {//reset all background colors to default color: white
                 spotify_streamer_btn.setBackgroundColor(Color.WHITE);
                 scores_app_btn.setBackgroundColor(Color.WHITE);
                 library_app_btn.setBackgroundColor(Color.WHITE);
