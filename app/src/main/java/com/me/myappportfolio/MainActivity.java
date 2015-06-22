@@ -17,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
     Button build_it_bigger_btn = null;
     Button capstone_btn = null;
 
-    static int id,  idbk;
+    static int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,11 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void onClick(View v) {
 
-            if(idbk != 0) {//reset all background colors to default color: white
+            Button btn = (Button) v;
+            String btnTxt = btn.getText().toString();
+            id = v.getId();
+
+            if(id != 0) {//reset all background colors to default color: white
                 spotify_streamer_btn.setBackgroundColor(Color.WHITE);
                 scores_app_btn.setBackgroundColor(Color.WHITE);
                 library_app_btn.setBackgroundColor(Color.WHITE);
@@ -52,48 +56,43 @@ public class MainActivity extends ActionBarActivity {
                 capstone_btn.setBackgroundColor(Color.WHITE);
             }
 
-            if(v == spotify_streamer_btn)        { id = 1; }
-            else if(v == scores_app_btn)         { id = 2; }
-            else if(v == library_app_btn)        { id = 3; }
-            else if(v == xyz_reader_btn)         { id = 4; }
-            else if(v == build_it_bigger_btn)    { id = 5; }
-            else if(v == capstone_btn)           { id = 6; }
+            btn.setBackgroundColor(Color.YELLOW);
+            Toast.makeText(getApplicationContext(), "This button will launch my " + btnTxt, Toast.LENGTH_LONG).show();
 
-            idbk = id;
-
+           /*
             switch (id) {
-                case 1:
+                case R.id.spotify_streamer_btn:
                     spotify_streamer_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my spotify streamer app!", Toast.LENGTH_LONG).show();
                     break;
 
-                case 2:
+                case R.id.scores_app_btn:
                     scores_app_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my scores app!", Toast.LENGTH_LONG).show();
                     break;
 
-                case 3:
+                case R.id.library_app_btn:
                     library_app_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my library app!", Toast.LENGTH_LONG).show();
                     break;
 
-                case 4:
+                case R.id.xyz_reader_btn:
                     xyz_reader_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my XYZ reader app!", Toast.LENGTH_LONG).show();
                     break;
 
-                case 5:
+                case R.id.build_it_bigger_btn:
                     build_it_bigger_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my build-it-bigger app!", Toast.LENGTH_LONG).show();
                     break;
 
-                case 6:
+                case R.id.capstone_btn:
                     capstone_btn.setBackgroundColor(Color.YELLOW);
                     Toast.makeText(getApplicationContext(), "This button will launch my capstone app!", Toast.LENGTH_LONG).show();
                     break;
 
                 default:
-            }
+            }*/
         }
     };
 /*
